@@ -1,0 +1,157 @@
+{
+  "project_name": "TechSathi AI",
+  "theme": "light",
+  "archetype": "Archetype 1 (Organic & Earthy) blended with Archetype 4 (Swiss & High-Contrast)",
+  "emotional_tone": "Approachable, Empowering, Innovative, Professional Startup",
+  "design_philosophy": "A modern Indian SaaS that feels like a 'Sathi' (companion). Grounded warm tones with sharp, high-contrast typography. Avoids the cold 'tech-bro' blue/purple aesthetics. Emphasizes clarity, fast F-pattern scanning, progressive disclosure, and bento-box layouts.",
+  "colors": {
+    "background": {
+      "default": "#FDFCF9",
+      "alt": "#F4F2EC"
+    },
+    "text": {
+      "primary": "#0A0E17",
+      "secondary": "#4A5568",
+      "inverse": "#FFFFFF",
+      "accent": "#E05D3A"
+    },
+    "brand": {
+      "primary": "#E05D3A",
+      "primary_hover": "#C84B29",
+      "secondary": "#1A2A42",
+      "secondary_hover": "#111C2D"
+    },
+    "accent": {
+      "sage_light": "#E6EFE9",
+      "sage_dark": "#4A7A64",
+      "saffron_light": "#FFF3ED",
+      "indigo_light": "#EDF1F8"
+    },
+    "ui": {
+      "border": "#EAE6DF",
+      "border_hover": "#D1CBC1",
+      "surface": "#FFFFFF",
+      "surface_glass": "rgba(255, 255, 255, 0.7)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Outfit, sans-serif",
+      "body": "IBM Plex Sans, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter font-medium",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl tracking-tight font-medium",
+      "h3": "text-xl sm:text-2xl font-medium tracking-tight",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm leading-normal",
+      "overline": "text-xs uppercase tracking-[0.2em] font-bold text-secondary"
+    },
+    "rules": [
+      "Headings must use tight letter spacing.",
+      "Never center text by default; use intentional left-alignment for dense content.",
+      "Use 'Outfit' for all prominent numbers and headings to give a geometric, modern tech feel.",
+      "Do not use generic fonts like Inter, Roboto, or Open Sans."
+    ]
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing Philosophy. Use 2-3x more padding than usual for breathing room.",
+    "bento_grid": {
+      "gap": "gap-6 md:gap-8",
+      "container_padding": "p-8 md:p-12"
+    },
+    "cards": {
+      "padding": "p-6 sm:p-8",
+      "border_radius": "rounded-2xl",
+      "border": "border border-border",
+      "shadow": "shadow-sm hover:shadow-lg transition-shadow duration-300"
+    },
+    "rules": [
+      "Always use mobile-first grid columns (grid-cols-1 md:grid-cols-3/4/8/12).",
+      "Card containers must have internal padding (p-6 or p-8) to prevent text collision with borders.",
+      "Section vertical spacing should use py-20 or py-32."
+    ]
+  },
+  "components": {
+    "navigation": {
+      "style": "Crystal Glassmorphism",
+      "classes": "fixed top-0 w-full z-50 backdrop-blur-xl bg-white/70 border-b border-border shadow-sm",
+      "features": ["Logo", "EN/Hi Toggle Switch", "Nav Links", "Primary CTA"]
+    },
+    "buttons": {
+      "primary": "bg-[#E05D3A] text-white hover:bg-[#C84B29] transition-colors rounded-full px-6 py-3 font-medium",
+      "secondary": "bg-[#1A2A42] text-white hover:bg-[#111C2D] transition-colors rounded-full px-6 py-3 font-medium",
+      "outline": "border-2 border-[#EAE6DF] text-primary hover:border-[#1A2A42] transition-colors rounded-full px-6 py-3 font-medium",
+      "ghost": "text-secondary hover:text-primary hover:bg-black/5 transition-colors rounded-full px-4 py-2"
+    },
+    "language_toggle": {
+      "style": "Neumorphic Pill",
+      "description": "A prominent but subtle toggle switch in the header to flip between 'English' and 'Hinglish'. Must have active state clearly highlighted with #E05D3A."
+    },
+    "hero_section": {
+      "layout": "Asymmetric",
+      "description": "Left-aligned heavy text with bilingual toggle near heading. Right side features a floating 3D mascot or abstract Bento UI overlapping the background."
+    },
+    "playground_dashboard": {
+      "layout": "Control Room Grid",
+      "style": "Cardless or flat cards with 1px border. Deep dense spacing to contrast the airy marketing layout. Uses 'IBM Plex Sans' for data density."
+    },
+    "rules": [
+      "Always use Shadcn UI components for complex interactions (Dropdown, Tabs, Forms).",
+      "Do NOT use raw HTML <select> or <input type='date'>.",
+      "Every interactive element MUST have a 'data-testid' attribute (e.g., 'data-testid=\"hero-cta-button\"')."
+    ]
+  },
+  "motion_and_interaction": {
+    "hover_states": "All buttons must translate slightly (-translate-y-0.5) and have clear color contrast changes.",
+    "transitions": "Use specific properties: 'transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease'.",
+    "scroll": "Implement 'lenis' for smooth scrolling to give a premium feel.",
+    "accessibility": "Respect prefers-reduced-motion. High contrast focus rings mandatory."
+  },
+  "icons_and_assets": {
+    "library": "lucide-react",
+    "stroke_width": 1.5
+  },
+  "media": {
+    "images": {
+      "hero_background": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/cf3fc19d-778f-44d8-9d69-ccaea22a7f93/images/d9ba2870a688d39c03fb20e49bd8f55df185ac6359613af8ce824bf7c8ab6555.png",
+        "alt": "Abstract textured background with warm terracotta and deep indigo",
+        "usage": "Behind the hero section with low opacity (e.g. 10-20%)"
+      },
+      "mascot_3d": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/cf3fc19d-778f-44d8-9d69-ccaea22a7f93/images/1b9f6b0fb73c7193bb65d354346db84c03ffa8119139ef15bafe7fb30e968799.png",
+        "alt": "Modern 3D AI companion mascot",
+        "usage": "Hero section primary visual on the right or floating"
+      },
+      "bento_abstract": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/cf3fc19d-778f-44d8-9d69-ccaea22a7f93/images/ff5ceb80591e90573ad64949706ec5130868509f08ad56615221ea91ccb6bc0c.png",
+        "alt": "Bento box UI abstract",
+        "usage": "Features section or 'How it works' visual"
+      },
+      "testimonial_student": {
+        "url": "https://images.pexels.com/photos/17602823/pexels-photo-17602823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Indian student studying with laptop",
+        "usage": "Student testimonial card"
+      },
+      "testimonial_business": {
+        "url": "https://images.unsplash.com/photo-1638544637644-2a2905d4f448?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBzbWFsbCUyMGJ1c2luZXNzJTIwb3duZXIlMjBzdGFydHVwfGVufDB8fHx8MTc3Nzc0NzE2Nnww&ixlib=rb-4.1.0&q=85",
+        "alt": "Indian small business owner",
+        "usage": "Business owner testimonial card"
+      }
+    }
+  },
+  "instructions_to_main_agent": [
+    "You MUST read and apply all colors, fonts, and rules from this JSON exactly as specified.",
+    "Do NOT use Inter font or purple/violet/teal color gradients.",
+    "Implement a working toggle for English/Hinglish in the Header.",
+    "Ensure the hero section overlay does not exceed bg-white/40 to let the background breathe.",
+    "Use 'lenis' for smooth scrolling.",
+    "Build the dashboard/playground section using Shadcn components (cards, tabs, inputs) but style them with our specific border radii, colors, and 1px borders.",
+    "All interactive elements must include a data-testid attribute in kebab-case.",
+    "Import Outfit and IBM Plex Sans fonts globally.",
+    "Never use generic placeholder images; only use the image URLs provided in the media section of this JSON."
+  ]
+}
