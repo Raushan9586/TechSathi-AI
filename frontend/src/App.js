@@ -1,52 +1,56 @@
-import { useEffect } from "react";
+import React, { useCallback } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { LanguageProvider } from "./context/LanguageContext";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { ToolsSections } from "./components/ToolsSections";
+import { HowItWorks } from "./components/HowItWorks";
+import { AIPlayground } from "./components/AIPlayground";
+import { Pricing } from "./components/Pricing";
+import { Testimonials } from "./components/Testimonials";
+import { FAQ } from "./components/FAQ";
+import { WaitlistCTA } from "./components/WaitlistCTA";
+import { Footer } from "./components/Footer";
+import { Toaster } from "./components/ui/sonner";
 
 const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
+  const scrollToPlayground = useCallback((toolId) => {
+    const el = document.getElementById("playground");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    // Allow playground to receive the tool selection via a custom event
+    window.dispatchEvent(new CustomEvent("select-tool", { detail: toolId }));
   }, []);
 
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <ToolsSections onTryTool={scrollToPlayground} />
+        <HowItWorks />
+        <AIPlayground />
+        <Pricing />
+        <Testimonials />
+        <FAQ />
+        <WaitlistCTA />
+      </main>
+      <Footer />
+    </>
   );
 };
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <LanguageProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+        <Toaster position="top-center" />
+      </LanguageProvider>
     </div>
   );
 }
