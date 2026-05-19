@@ -58,7 +58,7 @@ export const FAQ = () => {
         <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((item, i) => (
             <AccordionItem
-              key={i}
+              key={item.q_en}
               value={`faq-${i}`}
               data-testid={`faq-item-${i}`}
               className="bg-white border border-[var(--ts-border)] rounded-2xl px-6 data-[state=open]:border-[var(--ts-brand)]/40"

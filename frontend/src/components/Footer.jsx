@@ -19,9 +19,9 @@ export const Footer = () => {
             </div>
             <p className="text-[var(--ts-text-secondary)] max-w-sm mb-6">{t("footer_tag")}</p>
             <div className="flex gap-3">
-              {[Twitter, Linkedin, Instagram].map((Icon, i) => (
+              {[{ Icon: Twitter, name: "twitter" }, { Icon: Linkedin, name: "linkedin" }, { Icon: Instagram, name: "instagram" }].map(({ Icon, name }, i) => (
                 <a
-                  key={i}
+                  key={name}
                   href="#"
                   className="w-10 h-10 rounded-full bg-white border border-[var(--ts-border)] flex items-center justify-center text-[var(--ts-text-secondary)] hover:border-[var(--ts-brand)] hover:text-[var(--ts-brand)] transition-colors"
                   data-testid={`social-link-${i}`}

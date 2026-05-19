@@ -63,7 +63,6 @@ export const AIPlayground = () => {
       setOutput(data.output);
       setTimeout(() => outputRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }), 150);
     } catch (e) {
-      console.error(e);
       toast.error(lang === "en" ? "Generation failed. Try again." : "Kuch galat ho gaya, phir se try karo.");
     } finally {
       setLoading(false);

@@ -155,6 +155,7 @@ async def ai_generate(req: GenerateRequest):
         raise HTTPException(status_code=400, detail=f"Unknown tool: {req.tool}")
     lang = req.language if req.language in ("en", "hinglish") else "en"
     system_msg = SYSTEM_PROMPTS[req.tool][lang]
+    output = ""
     try:
         output = await run_claude(system_msg, req.prompt, req.session_id)
     except Exception as e:
@@ -186,6 +187,7 @@ async def chat(req: ChatRequest):
     if req.business_context:
         base += f"\n\nBusiness context: {req.business_context}"
 
+    reply = ""
     try:
         reply = await run_claude(base, req.message, session_id=session_id)
     except Exception as e:

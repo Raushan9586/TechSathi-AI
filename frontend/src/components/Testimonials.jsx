@@ -45,7 +45,7 @@ export const Testimonials = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((x, i) => (
             <article
-              key={i}
+              key={x.name}
               data-testid={`testimonial-${i}`}
               className="bg-white border border-[var(--ts-border)] rounded-3xl p-7 ts-hover-lift flex flex-col"
             >
@@ -67,7 +67,7 @@ export const Testimonials = () => {
                 "{lang === "hinglish" ? x.quote : x.quote_en}"
               </blockquote>
               <div className="flex gap-1 mt-6">
-                {Array.from({ length: 5 }).map((_, s) => (
+                {["s1", "s2", "s3", "s4", "s5"].map((s) => (
                   <span key={s} className="text-[var(--ts-brand)]">★</span>
                 ))}
               </div>
